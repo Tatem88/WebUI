@@ -47,7 +47,6 @@ public class TestWiki {
         driver.quit();
     }
 
-
         // Тест-кейс 3. Проверка возможности перехода по ссылке
         public static void three () throws InterruptedException {
         WebDriverManager.chromedriver().setup();
@@ -60,6 +59,7 @@ public class TestWiki {
             Thread.sleep(5000); // подождала 5 сек
             driver.quit();
         }
+
        // Тест-кейс 4. Возможность перехода на MediaWiki
     public static void four () throws InterruptedException {
         WebDriverManager.chromedriver().setup();
