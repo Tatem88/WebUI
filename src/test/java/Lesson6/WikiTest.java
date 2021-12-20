@@ -1,8 +1,8 @@
 package Lesson6;
 
 
-
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Description;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -28,6 +28,7 @@ public class WikiTest {
     }
 
     @Test
+    @Description("Тест проверки возможности авторизоваться в Wiki и разлогиниться")
     void CheckingAuthorizationForm() throws InterruptedException {
         new MainPage(driver).clickByXpath("//*[@id=\"pt-login\"]/a/span");
         new LoginBlock(driver)
@@ -40,6 +41,7 @@ public class WikiTest {
     }
 
     @Test
+    @Description("Тест поискового поля")
     void CheckingSearching() throws InterruptedException {
         new MainPage(driver).clickByXpath("//*[@id=\"pt-login\"]/a/span");
 
@@ -54,6 +56,7 @@ public class WikiTest {
         new LogoutBlock(driver);
     }
     @Test
+    @Description("Тест возможности перехода по ссылке из текста")
     void followingLink() throws InterruptedException {
         new SearchWord(driver)
                 .fillSearchInput("тестирование")
@@ -61,6 +64,7 @@ public class WikiTest {
     }
 
     @Test
+    @Description("Тест возможности перехода по ссылке в Медиавики")
     void AbilitySwitchMediaWiki() throws InterruptedException {
         new MainPage(driver)
                 .clickByXpath("//span[text()='Медиавики']");
@@ -68,6 +72,7 @@ public class WikiTest {
     }
 
     @Test
+    @Description("Тест перехода в Викисловарь и поиска в нём значения")
     void searchWiktionary() throws InterruptedException {
         new SearchWord(driver)
                 .clickByXpath("//*[text()='Викисловарь']");
@@ -78,6 +83,7 @@ public class WikiTest {
     }
 
     @Test
+    @Description("Тест перехода к статистике Wiki")
     void Statistics() throws InterruptedException {
         new MainPage(driver)
                 .clickById("footer-places-statslink");

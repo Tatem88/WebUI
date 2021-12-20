@@ -1,5 +1,6 @@
 package Lesson6;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,6 +22,7 @@ public class SearchWord extends MainPage  {
     @FindBy(id = searchInputLocatorById)
     private WebElement searchInput;
 
+    @Step("Ввод значения в поле поиска")
     public MainPage fillSearchInput(String s) {
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id(searchInputLocatorById)));
         searchInput.sendKeys(s);
